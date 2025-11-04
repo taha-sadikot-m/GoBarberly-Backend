@@ -5214,3 +5214,537 @@ D:\Co-Founder\GoBarberly\Frontend\backend\main\urls.py changed, reloading.
 Watching for file changes with StatReloader
 D:\Co-Founder\GoBarberly\Frontend\backend\main\urls.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"OPTIONS /api/super-admin/dashboard/data/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/dashboard/data/ HTTP/1.1" 200 0
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4456
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4456
+"OPTIONS /api/super-admin/admins/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/admins/ HTTP/1.1" 200 0
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"OPTIONS /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 0
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+"POST /api/auth/logout/ HTTP/1.1" 200 78
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4456
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4456
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/dashboard/stats/ HTTP/1.1" 200 194
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 6374
+"POST /api/super-admin/admins/ HTTP/1.1" 201 352
+"POST /api/super-admin/barbershops/ HTTP/1.1" 201 790
+"OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4731
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4731
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/dashboard/stats/ HTTP/1.1" 200 196
+"GET /api/super-admin/admins/ HTTP/1.1" 200 912
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7098
+"GET /api/super-admin/admins/ HTTP/1.1" 200 912
+"GET /api/super-admin/admins/14/ HTTP/1.1" 200 362
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/dashboard/stats/ HTTP/1.1" 200 196
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/admins/ HTTP/1.1" 200 912
+"GET /api/super-admin/admins/14/ HTTP/1.1" 200 362
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/admins/ HTTP/1.1" 200 912
+"GET /api/super-admin/admins/14/ HTTP/1.1" 200 362
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/admins/?search=@ HTTP/1.1" 200 912
+"GET /api/super-admin/barbershops/?search=shop HTTP/1.1" 200 7098
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/admins/?status=inactive HTTP/1.1" 200 912
+"GET /api/super-admin/barbershops/?status=inactive HTTP/1.1" 200 7098
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/dashboard/stats/ HTTP/1.1" 200 196
+"GET /api/super-admin/admins/ HTTP/1.1" 200 912
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7098
+"GET /api/super-admin/admins/ HTTP/1.1" 200 912
+"GET /api/super-admin/admins/14/ HTTP/1.1" 200 362
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7098
+"GET /api/super-admin/barbershops/15/ HTTP/1.1" 200 926
+"GET /api/super-admin/admins/ HTTP/1.1" 200 912
+"GET /api/super-admin/admins/14/ HTTP/1.1" 200 362
+"GET /api/super-admin/admins/14/barbershops/ HTTP/1.1" 200 208
+D:\Co-Founder\GoBarberly\Frontend\backend\super_admin\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Co-Founder\GoBarberly\Frontend\backend\super_admin\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/super-admin/admins/ HTTP/1.1" 200 912
+"GET /api/super-admin/admins/ HTTP/1.1" 200 912
+"OPTIONS /api/super-admin/admins/14/barbershops/ HTTP/1.1" 200 0
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"OPTIONS /api/super-admin/admins/14/barbershops/ HTTP/1.1" 200 0
+"GET /api/super-admin/admins/14/barbershops/ HTTP/1.1" 200 208
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/14/barbershops/ HTTP/1.1" 200 208
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4731
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4731
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4731
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4731
+"GET /api/super-admin/admins/ HTTP/1.1" 200 912
+"GET /api/super-admin/admins/ HTTP/1.1" 200 912
+"GET /api/super-admin/admins/14/barbershops/ HTTP/1.1" 200 208
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"GET /api/super-admin/admins/14/barbershops/ HTTP/1.1" 200 208
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"OPTIONS /api/super-admin/admins/14/ HTTP/1.1" 200 0
+"DELETE /api/super-admin/admins/14/ HTTP/1.1" 200 81
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4732
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"OPTIONS /api/super-admin/admins/2/ HTTP/1.1" 200 0
+Bad Request: /api/super-admin/admins/2/
+"DELETE /api/super-admin/admins/2/ HTTP/1.1" 400 354
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/dashboard/stats/ HTTP/1.1" 200 196
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7098
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/12/ HTTP/1.1" 200 364
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7098
+"GET /api/super-admin/barbershops/15/ HTTP/1.1" 200 926
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/12/ HTTP/1.1" 200 364
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7098
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/12/ HTTP/1.1" 200 364
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4732
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4732
+Not Found: /auth/login/
+"POST /auth/login/ HTTP/1.1" 404 3850
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+"POST /api/auth/login/ HTTP/1.1" 200 755
+Unauthorized: /api/super-admin/barbershops/
+"GET /api/super-admin/barbershops/ HTTP/1.1" 401 172
+"POST /api/auth/login/ HTTP/1.1" 200 755
+Unauthorized: /api/super-admin/barbershops/
+"GET /api/super-admin/barbershops/ HTTP/1.1" 401 172
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7098
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/ HTTP/1.1" 200 622
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 943
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 5735
+"POST /api/auth/logout/ HTTP/1.1" 200 78
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4732
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4732
+"POST /api/auth/login/ HTTP/1.1" 200 758
+"OPTIONS /api/admin/dashboard/stats/ HTTP/1.1" 200 0
+"OPTIONS /api/admin/dashboard/stats/ HTTP/1.1" 200 0
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7098
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+"POST /api/auth/login/ HTTP/1.1" 200 755
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7098
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7098
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 158
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7095
+"POST /api/auth/login/ HTTP/1.1" 200 758
+"POST /api/auth/login/ HTTP/1.1" 200 758
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/admin/barbershops/ HTTP/1.1" 200 2016
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7101
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"OPTIONS /api/admin/archive/barbershops/ HTTP/1.1" 200 0
+"OPTIONS /api/admin/archive/barbershops/ HTTP/1.1" 200 0
+Unauthorized: /api/admin/archive/barbershops/
+"GET /api/admin/archive/barbershops/ HTTP/1.1" 401 172
+Unauthorized: /api/admin/archive/barbershops/
+"GET /api/admin/archive/barbershops/ HTTP/1.1" 401 172
+"OPTIONS /api/auth/token/refresh/ HTTP/1.1" 200 0
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 491
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 491
+"GET /api/admin/archive/barbershops/ HTTP/1.1" 200 99
+"GET /api/admin/archive/barbershops/ HTTP/1.1" 200 99
+"OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/profile/
+"GET /api/auth/profile/ HTTP/1.1" 401 172
+Unauthorized: /api/auth/profile/
+"GET /api/auth/profile/ HTTP/1.1" 401 172
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 491
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 491
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"OPTIONS /api/admin/dashboard/stats/ HTTP/1.1" 200 0
+"OPTIONS /api/admin/dashboard/stats/ HTTP/1.1" 200 0
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/profile/
+"OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+"GET /api/auth/profile/ HTTP/1.1" 401 172
+Unauthorized: /api/auth/profile/
+"GET /api/auth/profile/ HTTP/1.1" 401 172
+"OPTIONS /api/auth/token/refresh/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/token/refresh/ HTTP/1.1" 200 0
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 491
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 491
+"GET /api/auth/profile/ HTTP/1.1" 200 680
+"GET /api/auth/profile/ HTTP/1.1" 200 680
+"OPTIONS /api/barbershop/profile/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/dashboard/stats/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/profile/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/dashboard/stats/ HTTP/1.1" 200 0
+"GET /api/barbershop/profile/ HTTP/1.1" 200 324
+"GET /api/barbershop/profile/ HTTP/1.1" 200 324
+"GET /api/barbershop/dashboard/stats/ HTTP/1.1" 200 204
+"GET /api/barbershop/dashboard/stats/ HTTP/1.1" 200 204
+"GET /media/shop_logos/1630646980988_j4W9B9U.jpeg HTTP/1.1" 304 0
+"OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+"POST /api/auth/logout/ HTTP/1.1" 200 78
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+"OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"POST /api/auth/logout/ HTTP/1.1" 200 78
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+Method Not Allowed: /api/auth/login/
+"GET /api/auth/login/ HTTP/1.1" 405 40
+Method Not Allowed: /api/auth/login/
+"GET /api/auth/login/ HTTP/1.1" 405 40
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+"POST /api/auth/login/ HTTP/1.1" 200 758
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"POST /api/auth/login/ HTTP/1.1" 200 731
+"POST /api/auth/login/ HTTP/1.1" 200 758
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"OPTIONS /api/super-admin/dashboard/data/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/dashboard/data/ HTTP/1.1" 200 0
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4991
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4991
+"OPTIONS /api/super-admin/admins/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/admins/ HTTP/1.1" 200 0
+"GET /api/super-admin/admins/ HTTP/1.1" 200 878
+"OPTIONS /api/super-admin/admins/16/barbershops/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 0
+"GET /api/super-admin/admins/ HTTP/1.1" 200 878
+"GET /api/super-admin/admins/16/barbershops/ HTTP/1.1" 200 202
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 2412
+"GET /api/super-admin/admins/16/barbershops/ HTTP/1.1" 200 202
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 4992
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 2412
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 4992
+"OPTIONS /api/super-admin/archive/admins/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/archive/admins/ HTTP/1.1" 200 0
+"GET /api/super-admin/archive/admins/ HTTP/1.1" 200 474
+"OPTIONS /api/super-admin/archive/barbershops/ HTTP/1.1" 200 0
+"GET /api/super-admin/archive/admins/ HTTP/1.1" 200 474
+"GET /api/super-admin/archive/barbershops/ HTTP/1.1" 200 99
+"GET /api/super-admin/archive/barbershops/ HTTP/1.1" 200 99
+"POST /api/auth/logout/ HTTP/1.1" 200 78
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4991
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4991
+"POST /api/auth/login/ HTTP/1.1" 200 758
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"OPTIONS /api/admin/archive/barbershops/ HTTP/1.1" 200 0
+"OPTIONS /api/admin/archive/barbershops/ HTTP/1.1" 200 0
+"GET /api/admin/archive/barbershops/ HTTP/1.1" 200 99
+"GET /api/admin/archive/barbershops/ HTTP/1.1" 200 99
+Unauthorized: /api/auth/login/
+"POST /api/auth/login/ HTTP/1.1" 401 146
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"OPTIONS /api/super-admin/dashboard/data/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/dashboard/data/ HTTP/1.1" 200 0
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4991
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4991
+D:\Co-Founder\GoBarberly\Frontend\backend\super_admin\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Co-Founder\GoBarberly\Frontend\backend\barbershop_admin\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"POST /api/auth/login/ HTTP/1.1" 200 758
+Internal Server Error: /api/super-admin/barbershops/
+"GET /api/super-admin/barbershops/ HTTP/1.1" 500 947
+Internal Server Error: /api/admin/barbershops/
+"GET /api/admin/barbershops/ HTTP/1.1" 500 947
+D:\Co-Founder\GoBarberly\Frontend\backend\super_admin\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Co-Founder\GoBarberly\Frontend\backend\barbershop_admin\views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"POST /api/auth/login/ HTTP/1.1" 200 758
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7302
+"GET /api/admin/barbershops/ HTTP/1.1" 200 2241
+"GET /api/admin/archive/barbershops/ HTTP/1.1" 200 99
+"GET /api/admin/archive/barbershops/ HTTP/1.1" 200 99
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 7302
+"POST /api/auth/login/ HTTP/1.1" 200 758
+"GET /api/admin/barbershops/ HTTP/1.1" 200 2241
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"OPTIONS /api/admin/barbershops/ HTTP/1.1" 200 0
+"POST /api/admin/barbershops/ HTTP/1.1" 201 799
+"GET /api/admin/barbershops/ HTTP/1.1" 200 2980
+"GET /api/admin/archive/barbershops/ HTTP/1.1" 200 99
+"GET /api/admin/archive/barbershops/ HTTP/1.1" 200 99
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/auth/profile/ HTTP/1.1" 200 607
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/barbershops/ HTTP/1.1" 200 2980
+"GET /media/shop_logos/1630646980988_j4W9B9U.jpeg HTTP/1.1" 304 0
+"GET /media/shop_logos/sym-logo-BDT_Y7Us.png HTTP/1.1" 200 33125
+"POST /api/auth/logout/ HTTP/1.1" 200 78
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"OPTIONS /api/super-admin/barbershops/ HTTP/1.1" 200 0
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 8052
+"GET /api/super-admin/admins/ HTTP/1.1" 200 878
+"GET /api/super-admin/admins/ HTTP/1.1" 200 878
+"GET /api/super-admin/admins/16/barbershops/ HTTP/1.1" 200 202
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 3141
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 4992
+"GET /api/super-admin/admins/16/barbershops/ HTTP/1.1" 200 202
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 3141
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 4992
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 8052
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 8052
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 8052
+"GET /media/shop_logos/sym-logo-BDT_Y7Us.png HTTP/1.1" 304 0
+"GET /api/super-admin/archive/admins/ HTTP/1.1" 200 474
+"GET /api/super-admin/archive/admins/ HTTP/1.1" 200 474
+"GET /api/super-admin/archive/barbershops/ HTTP/1.1" 200 99
+"GET /api/super-admin/archive/barbershops/ HTTP/1.1" 200 99
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 8052
+"GET /api/super-admin/admins/ HTTP/1.1" 200 878
+"GET /api/super-admin/admins/ HTTP/1.1" 200 878
+"GET /api/super-admin/admins/16/barbershops/ HTTP/1.1" 200 202
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 3141
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 4992
+"GET /api/super-admin/admins/16/barbershops/ HTTP/1.1" 200 202
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 3141
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 4992
+"POST /api/auth/logout/ HTTP/1.1" 200 78
+"OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/profile/ HTTP/1.1" 200 0
+Unauthorized: /api/auth/profile/
+"GET /api/auth/profile/ HTTP/1.1" 401 172
+Unauthorized: /api/auth/profile/
+"GET /api/auth/profile/ HTTP/1.1" 401 172
+"OPTIONS /api/auth/token/refresh/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/token/refresh/ HTTP/1.1" 200 0
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 491
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 491
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"OPTIONS /api/super-admin/dashboard/data/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/dashboard/data/ HTTP/1.1" 200 0
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+Unauthorized: /api/auth/profile/
+"GET /api/auth/profile/ HTTP/1.1" 401 172
+Unauthorized: /api/auth/profile/
+"GET /api/auth/profile/ HTTP/1.1" 401 172
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 491
+"POST /api/auth/token/refresh/ HTTP/1.1" 200 491
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/auth/profile/ HTTP/1.1" 200 603
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+"POST /api/auth/login/ HTTP/1.1" 200 755
+"OPTIONS /api/super-admin/dashboard/data/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/dashboard/data/ HTTP/1.1" 200 0
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"GET /api/super-admin/dashboard/data/ HTTP/1.1" 200 4995
+"OPTIONS /api/super-admin/admins/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/admins/ HTTP/1.1" 200 0
+"GET /api/super-admin/admins/ HTTP/1.1" 200 878
+"OPTIONS /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/admins/16/barbershops/ HTTP/1.1" 200 0
+"GET /api/super-admin/admins/ HTTP/1.1" 200 878
+"GET /api/super-admin/admins/16/barbershops/ HTTP/1.1" 200 202
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 3141
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 4992
+"GET /api/super-admin/admins/16/barbershops/ HTTP/1.1" 200 202
+"GET /api/super-admin/admins/12/barbershops/ HTTP/1.1" 200 3141
+"GET /api/super-admin/admins/2/barbershops/ HTTP/1.1" 200 4992
+"OPTIONS /api/super-admin/barbershops/ HTTP/1.1" 200 0
+"GET /api/super-admin/barbershops/ HTTP/1.1" 200 8052
+"GET /media/shop_logos/1630646980988_j4W9B9U.jpeg HTTP/1.1" 304 0
+"GET /media/shop_logos/sym-logo-BDT_Y7Us.png HTTP/1.1" 304 0
+"OPTIONS /api/super-admin/archive/admins/ HTTP/1.1" 200 0
+"OPTIONS /api/super-admin/archive/admins/ HTTP/1.1" 200 0
+"GET /api/super-admin/archive/admins/ HTTP/1.1" 200 474
+"OPTIONS /api/super-admin/archive/barbershops/ HTTP/1.1" 200 0
+"GET /api/super-admin/archive/barbershops/ HTTP/1.1" 200 99
+"GET /api/super-admin/archive/admins/ HTTP/1.1" 200 474
+"GET /api/super-admin/archive/barbershops/ HTTP/1.1" 200 99
+"OPTIONS /api/auth/logout/ HTTP/1.1" 200 0
+"POST /api/auth/logout/ HTTP/1.1" 200 78
+"POST /api/auth/login/ HTTP/1.1" 200 758
+"OPTIONS /api/admin/dashboard/stats/ HTTP/1.1" 200 0
+"OPTIONS /api/admin/dashboard/stats/ HTTP/1.1" 200 0
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"GET /api/admin/dashboard/stats/ HTTP/1.1" 200 174
+"OPTIONS /api/admin/barbershops/ HTTP/1.1" 200 0
+"GET /api/admin/barbershops/ HTTP/1.1" 200 2980

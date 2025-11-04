@@ -258,7 +258,8 @@ class AppointmentDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 class AdminBarbershopListCreateView(generics.ListCreateAPIView):
     """
-    List and create barbershops (admin scoped)
+    REWRITTEN: List and create barbershops (admin scoped) with comprehensive logging
+    Regular Admin API - shows ONLY barbershops created by this admin
     """
     permission_classes = [permissions.IsAuthenticated, IsAdmin]
     pagination_class = StandardResultsSetPagination
@@ -269,66 +270,153 @@ class AdminBarbershopListCreateView(generics.ListCreateAPIView):
         return AdminBarbershopListSerializer
     
     def get_queryset(self):
-        """Get barbershops created by this admin"""
-        admin = self.request.user
-        queryset = User.objects.filter(
-            created_by=admin,
-            role='barbershop'
-        ).order_by('-created_at')
+        """
+        REGULAR ADMIN ONLY: Return only barbershops created by this admin
+        """
+        import logging
+        logger = logging.getLogger(__name__)
         
-        # Search functionality
-        search = self.request.query_params.get('search')
-        if search:
-            queryset = queryset.filter(
-                Q(shop_name__icontains=search) |
-                Q(shop_owner_name__icontains=search) |
-                Q(email__icontains=search)
-            )
-        
-        # Filter by status
-        status_filter = self.request.query_params.get('status')
-        if status_filter == 'active':
-            queryset = queryset.filter(is_active=True)
-        elif status_filter == 'inactive':
-            queryset = queryset.filter(is_active=False)
-        
-        # Filter by subscription plan
-        plan_filter = self.request.query_params.get('plan')
-        if plan_filter:
-            queryset = queryset.filter(subscription__plan=plan_filter)
-        
-        return queryset
+        try:
+            admin = self.request.user
+            
+            # Get only barbershops created by this admin
+            queryset = User.objects.filter(
+                created_by=admin,
+                role='barbershop',
+                deleted_at__isnull=True  # Only active records (not soft-deleted)
+            ).order_by('-created_at')
+            
+            total_count = queryset.count()
+            logger.info(f"RegularAdmin BarbershopList: User {admin.email} requesting barbershops. Total managed: {total_count}")
+            
+            return queryset
+            
+        except Exception as e:
+            logger.error(f"RegularAdmin BarbershopList ERROR: {str(e)}")
+            raise
 
     def list(self, request, *args, **kwargs):
-        """List barbershops with custom response format"""
-        queryset = self.get_queryset()
-        serializer = self.get_serializer(queryset, many=True)
+        """REWRITTEN: List admin's barbershops with comprehensive logging and error handling"""
+        import logging
+        logger = logging.getLogger(__name__)
         
-        return Response({
-            'success': True,
-            'data': serializer.data,
-            'count': queryset.count(),
-            'message': 'Barbershops retrieved successfully'
-        })
-
-    def create(self, request, *args, **kwargs):
-        """Create barbershop with custom response format"""
-        serializer = self.get_serializer(data=request.data)
-        if serializer.is_valid():
-            barbershop = serializer.save()
-            response_serializer = AdminBarbershopListSerializer(barbershop)
+        try:
+            logger.info(f"RegularAdmin BarbershopList API called by user: {request.user.email} (Role: {request.user.role})")
             
+            # Verify user is admin (but not super admin)
+            if request.user.role != 'admin':
+                logger.warning(f"Unauthorized access attempt by {request.user.email} with role {request.user.role}")
+                return Response({
+                    'success': False,
+                    'data': [],
+                    'count': 0,
+                    'message': 'Access denied. Admin privileges required.',
+                    'error_code': 'INSUFFICIENT_PRIVILEGES'
+                }, status=status.HTTP_403_FORBIDDEN)
+            
+            # Get base queryset (only admin's barbershops)
+            queryset = self.get_queryset()
+            original_count = queryset.count()
+            logger.info(f"RegularAdmin BarbershopList: Admin {request.user.email} manages {original_count} barbershops")
+            
+            # Apply search filter
+            search = request.query_params.get('search', '').strip()
+            if search:
+                queryset = queryset.filter(
+                    Q(shop_name__icontains=search) |
+                    Q(shop_owner_name__icontains=search) |
+                    Q(email__icontains=search)
+                )
+                logger.info(f"RegularAdmin BarbershopList: Applied search filter '{search}', results: {queryset.count()}")
+            
+            # Apply status filter
+            status_filter = request.query_params.get('status', '').strip()
+            if status_filter == 'active':
+                queryset = queryset.filter(is_active=True)
+                logger.info(f"RegularAdmin BarbershopList: Applied active filter, results: {queryset.count()}")
+            elif status_filter == 'inactive':
+                queryset = queryset.filter(is_active=False)
+                logger.info(f"RegularAdmin BarbershopList: Applied inactive filter, results: {queryset.count()}")
+            
+            # Apply plan filter
+            plan_filter = request.query_params.get('plan', '').strip()
+            if plan_filter:
+                queryset = queryset.filter(subscription__plan=plan_filter)
+                logger.info(f"RegularAdmin BarbershopList: Applied plan filter '{plan_filter}', results: {queryset.count()}")
+            
+            final_count = queryset.count()
+            
+            # Serialize data
+            serializer = self.get_serializer(queryset, many=True)
+            serialized_data = serializer.data
+            
+            logger.info(f"RegularAdmin BarbershopList SUCCESS: Returning {final_count} barbershops to {request.user.email}")
+            
+            # Return successful response with same format as super admin
             return Response({
                 'success': True,
-                'data': response_serializer.data,
-                'message': 'Barbershop created successfully'
-            }, status=status.HTTP_201_CREATED)
+                'data': serialized_data,
+                'count': final_count,
+                'total_barbershops': original_count,
+                'message': f'Successfully retrieved {final_count} barbershops managed by you',
+                'filters_applied': {
+                    'search': search if search else None,
+                    'status': status_filter if status_filter else None,
+                    'plan': plan_filter if plan_filter else None
+                },
+                'metadata': {
+                    'user_role': request.user.role,
+                    'user_email': request.user.email,
+                    'endpoint': 'regular_admin_barbershops',
+                    'admin_id': request.user.id
+                }
+            })
+            
+        except Exception as e:
+            logger.error(f"RegularAdmin BarbershopList CRITICAL ERROR: {str(e)}")
+            return Response({
+                'success': False,
+                'data': [],
+                'count': 0,
+                'message': f'Failed to retrieve barbershops: {str(e)}',
+                'error_code': 'INTERNAL_ERROR'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def create(self, request, *args, **kwargs):
+        """REWRITTEN: Create barbershop with comprehensive logging"""
+        import logging
+        logger = logging.getLogger(__name__)
         
-        return Response({
-            'success': False,
-            'errors': serializer.errors,
-            'message': 'Failed to create barbershop'
-        }, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            logger.info(f"RegularAdmin CreateBarbershop: User {request.user.email} creating barbershop")
+            
+            serializer = self.get_serializer(data=request.data)
+            if serializer.is_valid():
+                barbershop = serializer.save()
+                response_serializer = AdminBarbershopListSerializer(barbershop)
+                
+                logger.info(f"RegularAdmin CreateBarbershop SUCCESS: Created barbershop {barbershop.email} by {request.user.email}")
+                
+                return Response({
+                    'success': True,
+                    'data': response_serializer.data,
+                    'message': f'Barbershop "{barbershop.shop_name or barbershop.email}" created successfully'
+                }, status=status.HTTP_201_CREATED)
+            else:
+                logger.warning(f"RegularAdmin CreateBarbershop VALIDATION ERROR: {serializer.errors}")
+                return Response({
+                    'success': False,
+                    'errors': serializer.errors,
+                    'message': 'Failed to create barbershop due to validation errors'
+                }, status=status.HTTP_400_BAD_REQUEST)
+                
+        except Exception as e:
+            logger.error(f"RegularAdmin CreateBarbershop CRITICAL ERROR: {str(e)}")
+            return Response({
+                'success': False,
+                'message': f'Failed to create barbershop: {str(e)}',
+                'error_code': 'INTERNAL_ERROR'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class AdminBarbershopDetailView(generics.RetrieveUpdateDestroyAPIView):

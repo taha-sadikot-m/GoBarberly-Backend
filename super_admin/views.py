@@ -370,12 +370,34 @@ class AdminBarbershopsView(APIView):
 
 class BarbershopListCreateView(generics.ListCreateAPIView):
     """
-    List all barbershops or create a new barbershop
+    REWRITTEN: List all barbershops or create a new barbershop with comprehensive logging
+    Super Admin API - shows ALL barbershops regardless of creator
     """
-    permission_classes = [permissions.IsAuthenticated, IsSuperAdminOrAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
     
     def get_queryset(self):
-        return User.objects.active_with_role('barbershop').select_related('subscription').order_by('-created_at')
+        """
+        SUPER ADMIN ONLY: Return ALL barbershops in the system
+        This endpoint is exclusively for super admins
+        """
+        import logging
+        logger = logging.getLogger(__name__)
+        
+        try:
+            # Get ALL barbershops (super admin privilege)
+            queryset = User.objects.filter(
+                role='barbershop',
+                deleted_at__isnull=True  # Only active records (not soft-deleted)
+            ).order_by('-created_at')
+            
+            total_count = queryset.count()
+            logger.info(f"SuperAdmin BarbershopList: User {self.request.user.email} requesting barbershops. Total found: {total_count}")
+            
+            return queryset
+            
+        except Exception as e:
+            logger.error(f"SuperAdmin BarbershopList ERROR: {str(e)}")
+            raise
     
     def get_serializer_class(self):
         if self.request.method == 'POST':
@@ -383,36 +405,88 @@ class BarbershopListCreateView(generics.ListCreateAPIView):
         return BarbershopListSerializer
     
     def list(self, request, *args, **kwargs):
-        """List all barbershops"""
-        queryset = self.get_queryset()
+        """REWRITTEN: List all barbershops with comprehensive logging and error handling"""
+        import logging
+        logger = logging.getLogger(__name__)
         
-        # Add search functionality
-        search = request.query_params.get('search', '')
-        if search:
-            queryset = queryset.filter(
-                Q(shop_name__icontains=search) |
-                Q(shop_owner_name__icontains=search) |
-                Q(email__icontains=search)
-            )
-        
-        # Add status filter
-        is_active = request.query_params.get('is_active', '')
-        if is_active in ['true', 'false']:
-            queryset = queryset.filter(is_active=is_active.lower() == 'true')
-        
-        # Add subscription plan filter
-        plan = request.query_params.get('plan', '')
-        if plan:
-            queryset = queryset.filter(subscription__plan=plan)
-        
-        serializer = self.get_serializer(queryset, many=True)
-        
-        return Response({
-            'success': True,
-            'data': serializer.data,
-            'count': queryset.count(),
-            'message': 'Barbershops retrieved successfully'
-        })
+        try:
+            logger.info(f"SuperAdmin BarbershopList API called by user: {request.user.email} (Role: {request.user.role})")
+            
+            # Verify user is super admin
+            if request.user.role != 'super_admin':
+                logger.warning(f"Unauthorized access attempt by {request.user.email} with role {request.user.role}")
+                return Response({
+                    'success': False,
+                    'data': [],
+                    'count': 0,
+                    'message': 'Access denied. Super admin privileges required.',
+                    'error_code': 'INSUFFICIENT_PRIVILEGES'
+                }, status=status.HTTP_403_FORBIDDEN)
+            
+            # Get base queryset
+            queryset = self.get_queryset()
+            original_count = queryset.count()
+            logger.info(f"SuperAdmin BarbershopList: Base queryset count: {original_count}")
+            
+            # Apply search filter
+            search = request.query_params.get('search', '').strip()
+            if search:
+                queryset = queryset.filter(
+                    Q(shop_name__icontains=search) |
+                    Q(shop_owner_name__icontains=search) |
+                    Q(email__icontains=search)
+                )
+                logger.info(f"SuperAdmin BarbershopList: Applied search filter '{search}', results: {queryset.count()}")
+            
+            # Apply status filter
+            is_active = request.query_params.get('is_active', '').strip()
+            if is_active in ['true', 'false']:
+                active_filter = is_active.lower() == 'true'
+                queryset = queryset.filter(is_active=active_filter)
+                logger.info(f"SuperAdmin BarbershopList: Applied active filter '{active_filter}', results: {queryset.count()}")
+            
+            # Apply subscription plan filter
+            plan = request.query_params.get('plan', '').strip()
+            if plan:
+                queryset = queryset.filter(subscription__plan=plan)
+                logger.info(f"SuperAdmin BarbershopList: Applied plan filter '{plan}', results: {queryset.count()}")
+            
+            final_count = queryset.count()
+            
+            # Serialize data
+            serializer = self.get_serializer(queryset, many=True)
+            serialized_data = serializer.data
+            
+            logger.info(f"SuperAdmin BarbershopList SUCCESS: Returning {final_count} barbershops to {request.user.email}")
+            
+            # Return successful response
+            return Response({
+                'success': True,
+                'data': serialized_data,
+                'count': final_count,
+                'total_barbershops': original_count,
+                'message': f'Successfully retrieved {final_count} barbershops',
+                'filters_applied': {
+                    'search': search if search else None,
+                    'is_active': is_active if is_active else None,
+                    'plan': plan if plan else None
+                },
+                'metadata': {
+                    'user_role': request.user.role,
+                    'user_email': request.user.email,
+                    'endpoint': 'super_admin_barbershops'
+                }
+            })
+            
+        except Exception as e:
+            logger.error(f"SuperAdmin BarbershopList CRITICAL ERROR: {str(e)}")
+            return Response({
+                'success': False,
+                'data': [],
+                'count': 0,
+                'message': f'Failed to retrieve barbershops: {str(e)}',
+                'error_code': 'INTERNAL_ERROR'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
     def create(self, request, *args, **kwargs):
         """Create a new barbershop"""
@@ -604,10 +678,21 @@ class ArchivedBarbershopListView(generics.ListAPIView):
     List archived (soft-deleted) barbershops
     """
     serializer_class = ArchivedBarbershopSerializer
-    permission_classes = [IsAuthenticated, IsSuperAdmin]
+    permission_classes = [IsAuthenticated, IsSuperAdminOrAdmin]
     
     def get_queryset(self):
-        return User.objects.deleted_with_role('barbershop').select_related('subscription', 'created_by', 'deleted_by').order_by('-deleted_at')
+        """
+        Return archived barbershops based on user role:
+        - Super Admin: All archived barbershops
+        - Admin: Only archived barbershops they created/manage
+        """
+        queryset = User.objects.deleted_with_role('barbershop').select_related('subscription', 'created_by', 'deleted_by').order_by('-deleted_at')
+        
+        # If user is admin (not super_admin), filter to only their barbershops
+        if self.request.user.role == 'admin':
+            queryset = queryset.filter(created_by=self.request.user)
+        
+        return queryset
     
     def list(self, request, *args, **kwargs):
         queryset = self.get_queryset()
