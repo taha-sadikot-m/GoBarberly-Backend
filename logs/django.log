@@ -5802,3 +5802,66 @@ Unauthorized: /api/auth/profile/
 "OPTIONS /api/barbershop/activity-logs/ HTTP/1.1" 200 0
 "GET /api/barbershop/activity-logs/ HTTP/1.1" 200 2425
 "GET /api/barbershop/activity-logs/ HTTP/1.1" 200 2425
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+D:\Co-Founder\GoBarberly\Frontend\backend\main\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /login.html
+"GET /login.html HTTP/1.1" 404 3846
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3849
+Watching for file changes with StatReloader
+"OPTIONS /api/auth/login/ HTTP/1.1" 200 0
+"POST /api/auth/login/ HTTP/1.1" 200 743
+"OPTIONS /api/barbershop/dashboard/stats/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/profile/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/profile/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/dashboard/stats/ HTTP/1.1" 200 0
+"GET /api/barbershop/profile/ HTTP/1.1" 200 324
+"GET /api/barbershop/profile/ HTTP/1.1" 200 324
+"GET /api/barbershop/dashboard/stats/ HTTP/1.1" 200 204
+"GET /api/barbershop/dashboard/stats/ HTTP/1.1" 200 204
+"OPTIONS /api/barbershop/staff/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/appointments/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/services/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/appointments/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/staff/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/services/ HTTP/1.1" 200 0
+"GET /api/barbershop/appointments/ HTTP/1.1" 200 284
+"GET /api/barbershop/appointments/ HTTP/1.1" 200 284
+"GET /api/barbershop/services/ HTTP/1.1" 200 1640
+"GET /api/barbershop/staff/ HTTP/1.1" 200 353
+"GET /api/barbershop/services/ HTTP/1.1" 200 1640
+"GET /api/barbershop/staff/ HTTP/1.1" 200 353
+"OPTIONS /api/barbershop/sales/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/sales/ HTTP/1.1" 200 0
+"GET /api/barbershop/services/ HTTP/1.1" 200 1640
+"GET /api/barbershop/sales/ HTTP/1.1" 200 196
+"GET /api/barbershop/staff/ HTTP/1.1" 200 353
+"GET /api/barbershop/sales/ HTTP/1.1" 200 196
+"GET /api/barbershop/services/ HTTP/1.1" 200 1640
+"GET /api/barbershop/staff/ HTTP/1.1" 200 353
+"GET /api/barbershop/services/ HTTP/1.1" 200 1640
+"GET /api/barbershop/services/ HTTP/1.1" 200 1640
+"GET /api/barbershop/services/ HTTP/1.1" 200 1640
+"GET /api/barbershop/services/ HTTP/1.1" 200 1640
+"GET /api/barbershop/staff/ HTTP/1.1" 200 353
+"GET /api/barbershop/staff/ HTTP/1.1" 200 353
+"OPTIONS /api/barbershop/staff/availability/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/staff/availability/ HTTP/1.1" 200 0
+"GET /api/barbershop/staff/availability/ HTTP/1.1" 200 685
+"GET /api/barbershop/staff/availability/ HTTP/1.1" 200 685
+"OPTIONS /api/barbershop/inventory/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/inventory/ HTTP/1.1" 200 0
+"GET /api/barbershop/inventory/ HTTP/1.1" 200 370
+"GET /api/barbershop/inventory/ HTTP/1.1" 200 370
+"OPTIONS /api/barbershop/customers/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/customers/ HTTP/1.1" 200 0
+"GET /api/barbershop/customers/ HTTP/1.1" 200 52
+"GET /api/barbershop/customers/ HTTP/1.1" 200 52
+"OPTIONS /api/barbershop/activity-logs/ HTTP/1.1" 200 0
+"OPTIONS /api/barbershop/activity-logs/ HTTP/1.1" 200 0
+"GET /api/barbershop/activity-logs/ HTTP/1.1" 200 2425
+"GET /api/barbershop/activity-logs/ HTTP/1.1" 200 2425
