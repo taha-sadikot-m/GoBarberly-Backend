@@ -32,7 +32,7 @@ ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="", cast=lambda v: [s.strip() fo
 
 # Add testserver for testing
 if DEBUG:
-    ALLOWED_HOSTS.extend(['127.0.0.1', 'localhost', 'testserver'])
+    ALLOWED_HOSTS.extend(['127.0.0.1', 'localhost', 'localhost:8000', '127.0.0.1:8000', 'testserver'])
 
 
 # Application definition
@@ -231,11 +231,33 @@ if FRONTEND_URL:
 
 CORS_ALLOW_CREDENTIALS = True
 
+# For development, allow all origins from localhost
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
+    CORS_ALLOWED_ORIGINS.extend([
+        "http://localhost:8000",  # Backend itself
+        "http://127.0.0.1:8000",
+    ])
+
 CORS_ALLOWED_ORIGINS_REGEXES = [
     r"^https://.*\.vercel\.app$",
     r"^https://.*\.netlify\.app$",
     r"^https://.*\.render\.com$",
 ]
+
+# Additional CORS settings for development
+if DEBUG:
+    CORS_ALLOW_HEADERS = [
+        'accept',
+        'accept-encoding',
+        'authorization',
+        'content-type',
+        'dnt',
+        'origin',
+        'user-agent',
+        'x-csrftoken',
+        'x-requested-with',
+    ]
 
 # API Documentation
 SPECTACULAR_SETTINGS = {
@@ -255,6 +277,8 @@ EMAIL_USE_TLS = config('EMAIL_USE_TLS', default=True, cast=bool)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@gobarberly.com')
+EMAIL_TIMEOUT = config('EMAIL_TIMEOUT', default=30, cast=int)
+EMAIL_CONNECTION_TIMEOUT = config('EMAIL_CONNECTION_TIMEOUT', default=30, cast=int)
 
 # Email subject prefix
 EMAIL_SUBJECT_PREFIX = '[GoBarberly] '
@@ -263,6 +287,18 @@ EMAIL_SUBJECT_PREFIX = '[GoBarberly] '
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = 'DENY'
+
+# Render-specific settings
+BACKEND_URL = config('BACKEND_URL', default='http://localhost:8000')
+USE_X_FORWARDED_HOST = True
+USE_X_FORWARDED_PORT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Add render.com to allowed hosts in production
+if not DEBUG:
+    RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+    if RENDER_EXTERNAL_HOSTNAME:
+        ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Rate Limiting - Disabled
 # RATELIMIT_ENABLE = False

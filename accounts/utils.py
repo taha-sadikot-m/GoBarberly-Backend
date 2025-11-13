@@ -85,10 +85,20 @@ def send_password_reset_email(user, request):
             user_agent=get_user_agent(request)
         )
         
-        # Build reset URL
-        reset_url = request.build_absolute_uri(
-            f"/api/auth/reset-password/?token={reset_token.token}"
-        )
+        # Build reset URL - Handle Render proxy properly
+        from django.conf import settings
+        
+        # Get the backend URL from settings for Render deployment
+        backend_url = getattr(settings, 'BACKEND_URL', 'http://localhost:8000')
+        
+        # If we're in production and have a backend URL, use it
+        if not settings.DEBUG and backend_url != 'http://localhost:8000':
+            reset_url = f"{backend_url}/api/auth/reset-password/?token={reset_token.token}"
+        else:
+            # Fallback to build_absolute_uri for local development
+            reset_url = request.build_absolute_uri(
+                f"/api/auth/reset-password/?token={reset_token.token}"
+            )
         
         # Email context
         context = {

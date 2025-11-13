@@ -353,8 +353,29 @@ class PasswordResetRequestView(APIView):
                 
                 try:
                     user = User.objects.get(email=email)
-                    send_password_reset_email(user, request)
-                    logger.info(f"Password reset email sent to {email}")
+                    
+                    # Send email with timeout protection for Render
+                    from django.core.exceptions import ValidationError
+                    import signal
+                    
+                    def timeout_handler(signum, frame):
+                        raise TimeoutError("Email sending timeout")
+                    
+                    # Set timeout for email sending (only on Unix systems)
+                    if hasattr(signal, 'SIGALRM'):
+                        signal.signal(signal.SIGALRM, timeout_handler)
+                        signal.alarm(25)  # 25 second timeout
+                    
+                    try:
+                        send_password_reset_email(user, request)
+                        logger.info(f"Password reset email sent to {email}")
+                    except (TimeoutError, Exception) as e:
+                        logger.warning(f"Email sending failed/timeout for {email}: {str(e)}")
+                        # Still return success to prevent email enumeration
+                    finally:
+                        if hasattr(signal, 'SIGALRM'):
+                            signal.alarm(0)  # Cancel timeout
+                            
                 except User.DoesNotExist:
                     # Don't reveal if email exists or not
                     logger.warning(f"Password reset requested for non-existent email: {email}")
